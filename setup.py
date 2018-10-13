@@ -115,7 +115,7 @@ extra_opts['cmdclass'] = {
 }
 
 setup(name='mongo-connector',
-      version="2.6.0",
+      use_scm_version=True,
       author="MongoDB, Inc.",
       author_email='mongodb-user@googlegroups.com',
       description='Mongo Connector',
@@ -142,5 +142,8 @@ setup(name='mongo-connector',
           "elastic5": ["elastic2-doc-manager[elastic5]"],
           "elastic2-aws": ["elastic2-doc-manager[elastic2,aws]"],
       },
+      setup_requires=[
+          'setuptools_scm>=1.5',
+      ],
       **extra_opts
 )
